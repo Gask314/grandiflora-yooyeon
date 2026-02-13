@@ -46,10 +46,10 @@ h1, h2, h3 {
 .halo-text {
     background: var(--holo-gradient);
     -webkit-background-clip: text;
-    background-clip: text
+    background-clip: text;
     color: transparent;
     font-weight: 600;
-    animation: shimmer 7s linear infinite;
+    animation: shimmer 7s infinite linear;
     background-size: 200% auto;
 }
 
