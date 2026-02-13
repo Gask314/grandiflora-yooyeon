@@ -1,12 +1,10 @@
 :root {
-    /* Palette: Whites and Silvers */
     --bg-color: #fcfcfc;
     --bg-secondary: #f4f4f6;
     --text-main: #505060;
     --text-light: #888899;
     --silver-accent: #c0c0d0;
-    
-    /* The Holographic/Celestial Magic */
+
     --holo-gradient: linear-gradient(120deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0);
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.8);
@@ -29,7 +27,7 @@ body {
         radial-gradient(circle at 90% 90%, rgba(200, 200, 255, 0.05) 0%, transparent 40%);
 }
 
-/* --- Typography --- */
+/* Typography */
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
     font-weight: 400;
@@ -52,7 +50,7 @@ h1, h2, h3 {
     100% { background-position: 200% 50%; }
 }
 
-/* --- Layout Utilities --- */
+/* Layout */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -63,7 +61,7 @@ section {
     padding: 5rem 0;
 }
 
-/* --- Navigation --- */
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -112,7 +110,7 @@ nav {
     width: 100%;
 }
 
-/* --- Hero Section --- */
+/* Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -122,7 +120,6 @@ nav {
     position: relative;
 }
 
-/* The Moon/Orb Background Effect */
 .moon-glow {
     position: absolute;
     width: 400px;
@@ -151,7 +148,7 @@ nav {
     margin: 0 auto;
 }
 
-/* --- Cards (Projects & Blog) --- */
+/* Cards */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -172,7 +169,6 @@ nav {
 }
 
 .card::before {
-    /* Holographic border effect on top */
     content: '';
     position: absolute;
     top: 0;
@@ -231,7 +227,7 @@ nav {
     color: transparent;
 }
 
-/* --- About Section --- */
+/* About */
 .about-layout {
     display: flex;
     gap: 4rem;
@@ -248,7 +244,7 @@ nav {
     color: var(--text-main);
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
     text-align: center;
     padding: 4rem 0;
@@ -273,8 +269,9 @@ footer {
     color: var(--text-main);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .about-layout { flex-direction: column; }
-    .nav-links { display: none; } /* Simple hiding for mobile */
+    .nav-links { display: none; }
 }
