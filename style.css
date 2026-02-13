@@ -33,6 +33,32 @@ h1, h2, h3 {
     color: #2a2a35;
 }
 
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.footer-subtext {
+    margin: 1rem 0 2rem;
+    color: var(--text-light);
+}
+
+
+.halo-text {
+    background: var(--holo-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    background-size: 300% 300%;
+    animation: shimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+/*
 .halo-text {
     background: var(--holo-gradient);
     -webkit-background-clip: text;
@@ -47,7 +73,7 @@ h1, h2, h3 {
     0% { background-position: 0% 50%; }
     100% { background-position: 200% 50%; }
 }
-
+*/
 .container {
     max-width: 1100px;
     margin: 0 auto;
