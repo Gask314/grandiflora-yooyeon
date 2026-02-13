@@ -4,7 +4,7 @@
     --text-main: #505060;
     --text-light: #888899;
     --silver-accent: #c0c0d0;
-    --holo-gradient: linear-gradient(119deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0, #ffcbf2);
+    --holo-gradient: linear-gradient(119deg, #ffcbf2 0%, #dbe4ff 30%, #d4ffea 60%, #fff3b0 90%, #ffcbf2 100%);
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow-dreamy: 0 10px 40px -10px rgba(180, 190, 210, 0.3);
@@ -49,7 +49,7 @@ h1, h2, h3 {
     background-clip: text;
     color: transparent;
     font-weight: 600;
-    animation: shimmer 7s infinite linear;
+    animation: shimmer 7s linear infinite;
     background-size: 200% auto;
 }
 
