@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette: Whites and Silvers */
+            --bg-color: #fcfcfc;
+            --bg-secondary: #f4f4f6;
+            --text-main: #505060;
+            --text-light: #888899;
+            --silver-accent: #c0c0d0;
+            
+            /* The Holographic/Celestial Magic */
+            --holo-gradient: linear-gradient(120deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0);
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --shadow-dreamy: 0 10px 40px -10px rgba(180, 190, 210, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(200, 200, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(200, 200, 255, 0.05) 0%, transparent 40%);
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #2a2a35;
+        }
+
+        .halo-text {
+            background: var(--holo-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            animation: shimmer 6s infinite linear;
+            background-size: 200% auto;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* --- Layout Utilities --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background: var(--holo-gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        /* The Moon/Orb Background Effect */
+        .moon-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230,230,250,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(40px);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Cards (Projects & Blog) --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-dreamy);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            /* Holographic border effect on top */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--holo-gradient);
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px -10px rgba(160, 170, 200, 0.5);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--silver-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--silver-accent);
+            padding-bottom: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-link:hover {
+            border-color: #a0a0ff;
+            background: var(--holo-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* --- About Section --- */
+        .about-layout {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(200, 200, 200, 0.2);
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: var(--silver-accent);
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-layout { flex-direction: column; }
+            .nav-links { display: none; } /* Simple hiding for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo">Astra.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#blog">Journal</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="moon-glow"></div> <div class="container">
+            <h1>Building <span class="halo-text">Ethereal</span> Web Experiences</h1>
+            <p>I am a creative developer bridging the gap between design and code. Welcome to my digital garden.</p>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">About Me</h2>
+        <div class="about-layout">
+            <div class="about-text">
+                <p>Hello. I'm a designer and developer with a passion for minimalism and light. I believe the web should feel like a breath of fresh air.</p>
+                <p>My background is in UI/UX design, but I found my true calling in front-end development. I love creating interfaces that feel organic, using code to mimic the natural flow of light and physics.</p>
+                <p>When I'm not coding, I'm likely stargazing, reading sci-fi, or hunting for the perfect silver jewelry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Selected Works</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="card-meta">Web Design</span>
+                <h3>Project Luna</h3>
+                <p>A minimalist e-commerce platform for handmade jewelry. Focus on white space and micro-interactions.</p>
+                <a href="#" class="btn-link">View Case Study</a>
+            </div>
+            
+            <div class="card">
+                <span class="card-meta">App Development</span>
+                <h3>Nebula Tracker</h3>
+                <p>A productivity application that visualizes tasks as stars in a constellation.</p>
+                <a href="#" class="btn-link">View Case Study</a>
+            </div>
+
+            <div class="card">
+                <span class="card-meta">UI Kit</span>
+                <h3>Prism UI</h3>
+                <p>An open-source React component library utilizing glassmorphism and light physics.</p>
+                <a href="#" class="btn-link">View Documentation</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="container">
+        <h2>The Journal</h2>
+        <div class="grid">
+            <article class="card">
+                <span class="card-meta">October 12, 2025</span>
+                <h3>The Ethics of AI in Design</h3>
+                <p>Exploring how artificial intelligence changes the creative process without losing the human touch.</p>
+                <a href="#" class="btn-link">Read Article</a>
+            </article>
+
+            <article class="card">
+                <span class="card-meta">September 28, 2025</span>
+                <h3>CSS Gradients: A Deep Dive</h3>
+                <p>How to use multi-layered gradients to create holographic and iridescent effects on the web.</p>
+                <a href="#" class="btn-link">Read Article</a>
+            </article>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Align Our Orbits</h2>
+            <p style="margin: 1rem 0 2rem; color: var(--text-light);">Open for collaborations and freelance projects.</p>
+            
+            <div class="socials">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">Instagram</a>
+            </div>
+            
+            <p style="font-size: 0.8rem; color: var(--silver-accent);">
+                &copy; 2025 Astra Portfolio. Crafted with Starlight.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
