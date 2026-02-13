@@ -4,7 +4,7 @@
     --text-main: #505060;
     --text-light: #888899;
     --silver-accent: #c0c0d0;
-    --holo-gradient: linear-gradient(120deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0);
+    --holo-gradient: linear-gradient(119deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0);
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow-dreamy: 0 10px 40px -10px rgba(180, 190, 210, 0.3);
@@ -43,29 +43,13 @@ h1, h2, h3 {
     color: var(--text-light);
 }
 
-/*
 .halo-text {
     background: var(--holo-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: 700;
-    background-size: 300% 300%;
-    animation: shimmer 8s ease-in-out infinite alternate;
-}
-
-@keyframes shimmer {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-*/
-.halo-text {
-    background: var(--holo-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
-    animation: shimmer 6s infinite linear;
+    font-weight: 600;
+    animation: shimmer 5s infinite linear;
     background-size: 200% auto;
 }
 
