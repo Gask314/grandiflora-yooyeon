@@ -46,8 +46,7 @@ h1, h2, h3 {
 .halo-text {
     background: var(--holo-gradient);
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text
     color: transparent;
     font-weight: 600;
     animation: shimmer 7s linear infinite;
@@ -55,8 +54,8 @@ h1, h2, h3 {
 }
 
 @keyframes shimmer {
-    from { background-position: 0% 50%; }
-    to { background-position: 200% 50%; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 .container {
