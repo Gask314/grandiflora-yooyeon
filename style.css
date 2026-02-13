@@ -4,7 +4,7 @@
     --text-main: #505060;
     --text-light: #888899;
     --silver-accent: #c0c0d0;
-    --holo-gradient: linear-gradient(120deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0);
+    --holo-gradient: linear-gradient(120deg, #ffcbf2, #dbe4ff, #d4ffea, #fff3b0, #ffcbf2);
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow-dreamy: 0 10px 40px -10px rgba(180, 190, 210, 0.3);
